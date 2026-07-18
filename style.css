@@ -1,0 +1,2124 @@
+/* =======================================================
+   BANK DIGITAL
+   STYLE.CSS
+   PART 1
+   RESET + THEME + SPLASH + LOGIN
+======================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#07172D;
+    color:#fff;
+}
+
+/* ===============================
+   WARNA TEMA
+================================= */
+
+:root{
+
+    --primary:#0D6EFD;
+    --secondary:#1D4ED8;
+
+    --success:#00C853;
+    --danger:#FF3D57;
+
+    --white:#ffffff;
+    --text:#EAF1FF;
+
+    --card:rgba(255,255,255,.08);
+
+    --border:rgba(255,255,255,.12);
+
+    --shadow:
+    0 15px 35px rgba(0,0,0,.35);
+
+    --radius:20px;
+
+}
+
+/* ===============================
+   BACKGROUND
+================================= */
+
+body{
+
+    background:
+
+    linear-gradient(
+    180deg,
+    rgba(5,18,45,.95),
+    rgba(10,37,74,.92)
+    ),
+
+    url("images/bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+/* Blur Background */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    backdrop-filter:blur(5px);
+
+    z-index:-1;
+
+}
+
+/* ===============================
+   SPLASH SCREEN
+================================= */
+
+#splash-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    background:
+
+    linear-gradient(
+    160deg,
+    #07172D,
+    #102D5A
+    );
+
+    z-index:9999;
+
+    transition:.7s;
+
+}
+
+#splash-screen img{
+
+    width:120px;
+
+    margin-bottom:20px;
+
+    animation:
+
+    logoFloat 2.5s infinite ease-in-out;
+
+}
+
+#splash-screen h1{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+#splash-screen p{
+
+    margin-top:8px;
+
+    color:#ddd;
+
+    font-size:15px;
+
+}
+
+/* ===============================
+   LOADER
+================================= */
+
+.loader{
+
+    margin-top:35px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.2);
+
+    border-top:5px solid #fff;
+
+    animation:spin .8s linear infinite;
+
+}
+
+/* ===============================
+   LOGIN PAGE
+================================= */
+
+#login-page{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+}
+
+/* ===============================
+   LOGIN CARD
+================================= */
+
+.login-card{
+
+    width:100%;
+
+    max-width:400px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    padding:40px;
+
+    text-align:center;
+
+    animation:fadeUp .8s;
+
+}
+
+.login-logo{
+
+    width:95px;
+
+    margin-bottom:20px;
+
+}
+
+.login-card h2{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.login-card p{
+
+    color:#d5d5d5;
+
+    margin-bottom:30px;
+
+}
+
+/* ===============================
+   INPUT PIN
+================================= */
+
+#pinInput{
+
+    width:100%;
+
+    height:60px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    padding:0 20px;
+
+    background:rgba(255,255,255,.10);
+
+    color:#fff;
+
+    font-size:24px;
+
+    letter-spacing:12px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+#pinInput::placeholder{
+
+    color:#bbb;
+
+    letter-spacing:10px;
+
+}
+
+#pinInput:focus{
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid var(--primary);
+
+}
+
+/* ===============================
+   BUTTON LOGIN
+================================= */
+
+#loginBtn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#loginBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 12px 30px rgba(13,110,253,.35);
+
+}
+
+#loginBtn:active{
+
+    transform:scale(.98);
+
+}
+
+#loginBtn i{
+
+    margin-right:10px;
+
+}
+
+/* ===============================
+   APP
+================================= */
+
+#app{
+
+    display:none;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:auto;
+
+}
+
+/* ===============================
+   SCROLLBAR
+================================= */
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3f6ff3;
+
+    border-radius:20px;
+
+}
+
+/* ===============================
+   ANIMATION
+================================= */
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes logoFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media(max-width:768px){
+
+.login-card{
+
+    padding:30px;
+
+}
+
+.login-card h2{
+
+    font-size:24px;
+
+}
+
+#pinInput{
+
+    height:55px;
+
+    font-size:22px;
+
+}
+
+#loginBtn{
+
+    height:55px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.login-card{
+
+    padding:25px;
+
+}
+
+.login-logo{
+
+    width:80px;
+
+}
+
+.login-card h2{
+
+    font-size:22px;
+
+}
+
+#pinInput{
+
+    letter-spacing:8px;
+
+    font-size:20px;
+
+}
+
+}
+
+/* =======================================================
+   PART 2
+   HOME + HEADER + CARD REKENING + MENU
+=======================================================*/
+
+/* ===============================
+   HEADER
+================================= */
+
+header{
+
+    position:sticky;
+    top:0;
+
+    width:100%;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0 20px;
+
+    background:rgba(6,18,40,.75);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:100;
+
+}
+
+.header{
+
+    width:100%;
+    max-width:500px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+}
+
+.header img{
+
+    width:42px;
+    height:42px;
+
+    object-fit:contain;
+
+}
+
+.header span{
+
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:1px;
+
+}
+
+/* ===============================
+   PAGE
+================================= */
+
+.page{
+
+    display:none;
+
+    padding:20px;
+
+    padding-bottom:120px;
+
+    animation:fadePage .35s ease;
+
+}
+
+.page.active{
+
+    display:block;
+
+}
+
+/* ===============================
+   HOME
+================================= */
+
+#home{
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+/* ===============================
+   CARD REKENING
+================================= */
+
+.rekening-card{
+
+    margin-top:25px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    rgba(13,110,253,.95),
+    rgba(5,70,180,.95)
+    );
+
+    border-radius:25px;
+
+    padding:22px;
+
+    color:#fff;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* efek cahaya */
+
+.rekening-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:
+
+    radial-gradient(
+    rgba(255,255,255,.25),
+    transparent
+    );
+
+    right:-70px;
+    top:-70px;
+
+}
+
+/* ===============================
+   TOP
+================================= */
+
+.rekening-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.rekening-top small{
+
+    opacity:.8;
+
+    font-size:13px;
+
+}
+
+.rekening-top h2{
+
+    margin-top:5px;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+.rekening-top i{
+
+    font-size:28px;
+
+    background:rgba(255,255,255,.15);
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* ===============================
+   GARIS
+================================= */
+
+.rekening-card hr{
+
+    margin:18px 0;
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+/* ===============================
+   NOMOR REKENING
+================================= */
+
+.rekening-number{
+
+    text-align:center;
+
+}
+
+.rekening-number small{
+
+    opacity:.8;
+
+}
+
+.rekening-number h3{
+
+    margin-top:8px;
+
+    letter-spacing:3px;
+
+    font-size:22px;
+
+}
+
+/* ===============================
+   COPY BUTTON
+================================= */
+
+#copyBtn{
+
+    margin-top:18px;
+
+    width:100%;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    color:#0D6EFD;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#copyBtn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+#copyBtn:active{
+
+    transform:scale(.98);
+
+}
+
+#copyBtn i{
+
+    margin-right:8px;
+
+}
+
+/* ===============================
+   SALDO
+================================= */
+
+.saldo-box{
+
+    text-align:center;
+
+}
+
+.saldo-box small{
+
+    opacity:.8;
+
+}
+
+.saldo-box h1{
+
+    margin-top:10px;
+
+    font-size:38px;
+
+    font-weight:700;
+
+}
+
+/* ===============================
+   MENU
+================================= */
+
+.menu-grid{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+/* semua tombol */
+
+.menu-grid button{
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    color:#fff;
+
+    height:95px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.menu-grid button:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.menu-grid button:active{
+
+    transform:scale(.98);
+
+}
+
+.menu-grid button i{
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
+/* ===============================
+   WARNA ICON
+================================= */
+
+#saldoMasuk i{
+
+    color:#00E676;
+
+}
+
+#saldoKeluar i{
+
+    color:#FF5252;
+
+}
+
+#lihatMutasi i{
+
+    color:#FFD54F;
+
+}
+
+/* tombol riwayat */
+
+#lihatMutasi{
+
+    grid-column:1/3;
+
+}
+
+/* ===============================
+   ANIMASI PAGE
+================================= */
+
+@keyframes fadePage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media(max-width:600px){
+
+.rekening-card{
+
+    padding:18px;
+
+}
+
+.rekening-top h2{
+
+    font-size:21px;
+
+}
+
+.rekening-number h3{
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+}
+
+.saldo-box h1{
+
+    font-size:30px;
+
+}
+
+.menu-grid button{
+
+    height:85px;
+
+    font-size:14px;
+
+}
+
+.menu-grid button i{
+
+    font-size:28px;
+
+}
+
+}
+
+/* =======================================================
+   PART 3
+   POPUP + MUTASI + PROFIL + TOAST
+=======================================================*/
+
+
+/*==============================
+        PAGE TITLE
+==============================*/
+
+.page-title{
+
+    margin-top:20px;
+    margin-bottom:20px;
+
+}
+
+.page-title h2{
+
+    font-size:24px;
+    font-weight:700;
+
+}
+
+
+/*==============================
+          MUTASI
+==============================*/
+
+#mutasi{
+
+    max-width:500px;
+    margin:auto;
+
+}
+
+#mutasiList{
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+}
+
+/* Card Mutasi */
+
+.mutasi-item{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    transition:.3s;
+
+}
+
+.mutasi-item:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.mutasi-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.mutasi-header h3{
+
+    font-size:17px;
+    font-weight:600;
+
+}
+
+.mutasi-header small{
+
+    color:#cfcfcf;
+
+}
+
+.mutasi-footer{
+
+    margin-top:15px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.nominal-masuk{
+
+    color:#00E676;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.nominal-keluar{
+
+    color:#FF5252;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+
+/*==============================
+            PROFIL
+==============================*/
+
+#profil{
+
+    max-width:500px;
+    margin:auto;
+
+}
+
+.profile-card{
+
+    margin-top:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+.profile-card img{
+
+    width:110px;
+    height:110px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid rgba(255,255,255,.25);
+
+    margin-bottom:15px;
+
+}
+
+.profile-card h2{
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+.profile-card p{
+
+    color:#ddd;
+
+}
+
+
+/*==============================
+        SETTING LIST
+==============================*/
+
+.setting-list{
+
+    margin-top:25px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.setting-list button{
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    padding:0 22px;
+
+    font-size:16px;
+
+    transition:.25s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.setting-list button:hover{
+
+    background:rgba(255,255,255,.13);
+
+    transform:translateX(5px);
+
+}
+
+.setting-list button i{
+
+    width:30px;
+
+}
+
+
+/*==============================
+          POPUP
+==============================*/
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.popup.active{
+
+    display:flex;
+
+    animation:popupFade .25s;
+
+}
+
+.popup-box{
+
+    width:92%;
+    max-width:380px;
+
+    background:#10274A;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+}
+
+.popup-box h2{
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+.popup-box input{
+
+    width:100%;
+
+    height:55px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    padding:0 18px;
+
+    background:rgba(255,255,255,.10);
+
+    color:#fff;
+
+    font-size:16px;
+
+}
+
+.popup-box input::placeholder{
+
+    color:#cfcfcf;
+
+}
+
+.popup-box button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    margin-top:10px;
+
+}
+
+
+/* tombol simpan */
+
+#simpanSaldo,
+#simpanNama,
+#simpanPin{
+
+    background:#0D6EFD;
+
+    color:#fff;
+
+}
+
+#simpanSaldo:hover,
+#simpanNama:hover,
+#simpanPin:hover{
+
+    background:#2563EB;
+
+}
+
+/* tombol batal */
+
+#batalPopup,
+#batalNama,
+#batalPin{
+
+    background:#2F3B52;
+
+    color:#fff;
+
+}
+
+#batalPopup:hover,
+#batalNama:hover,
+#batalPin:hover{
+
+    background:#45556E;
+
+}
+
+
+/*==============================
+        TOAST
+==============================*/
+
+#toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:110px;
+
+    transform:translateX(-50%);
+
+    background:#111;
+
+    color:#fff;
+
+    padding:15px 25px;
+
+    border-radius:15px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:99999;
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/*==============================
+       ANIMATION
+==============================*/
+
+@keyframes popupFade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/*==============================
+        RESPONSIVE
+==============================*/
+
+@media(max-width:480px){
+
+.profile-card{
+
+    padding:25px;
+
+}
+
+.profile-card img{
+
+    width:90px;
+    height:90px;
+
+}
+
+.profile-card h2{
+
+    font-size:20px;
+
+}
+
+.setting-list button{
+
+    font-size:15px;
+
+}
+
+.popup-box{
+
+    padding:20px;
+
+}
+
+}
+
+/* =======================================================
+   PART 4
+   BOTTOM NAVIGATION + RESPONSIVE + ANIMATION
+=======================================================*/
+
+
+/*=================================================
+            BOTTOM NAVIGATION
+=================================================*/
+
+.bottom-nav{
+
+    position:fixed;
+
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    width:95%;
+    max-width:520px;
+
+    height:72px;
+
+    background:rgba(15,27,52,.88);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    z-index:999;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
+
+}
+
+
+/*=================================================
+                NAV BUTTON
+=================================================*/
+
+.nav-btn{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    background:transparent;
+
+    color:#AEB9CF;
+
+    cursor:pointer;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.30s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.nav-btn i{
+
+    font-size:22px;
+
+    margin-bottom:6px;
+
+}
+
+.nav-btn span{
+
+    font-size:12px;
+
+    font-weight:500;
+
+}
+
+
+/*=================================================
+              ACTIVE MENU
+=================================================*/
+
+.nav-btn.active{
+
+    color:#ffffff;
+
+}
+
+.nav-btn.active i{
+
+    color:#0D6EFD;
+
+    transform:translateY(-2px);
+
+}
+
+.nav-btn.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:8px;
+
+    width:45px;
+    height:4px;
+
+    border-radius:50px;
+
+    background:#0D6EFD;
+
+}
+
+
+/*=================================================
+             HOVER
+=================================================*/
+
+.nav-btn:hover{
+
+    color:#fff;
+
+}
+
+
+/*=================================================
+            RIPPLE EFFECT
+=================================================*/
+
+.nav-btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.45s;
+
+}
+
+.nav-btn:active::after{
+
+    width:180px;
+
+    height:180px;
+
+}
+
+
+/*=================================================
+            PAGE ANIMATION
+=================================================*/
+
+.page{
+
+    animation:slidePage .35s ease;
+
+}
+
+@keyframes slidePage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=================================================
+             CARD ANIMATION
+=================================================*/
+
+.rekening-card{
+
+    animation:cardShow .7s;
+
+}
+
+@keyframes cardShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=================================================
+             BUTTON EFFECT
+=================================================*/
+
+button{
+
+    transition:
+    background .25s,
+    transform .25s,
+    box-shadow .25s;
+
+}
+
+button:hover{
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.20);
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/*=================================================
+              SCROLL
+=================================================*/
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+/*=================================================
+           GLASS EFFECT
+=================================================*/
+
+.glass{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+/*=================================================
+             SHADOW
+=================================================*/
+
+.shadow{
+
+    box-shadow:
+
+    0 18px 40px rgba(0,0,0,.30);
+
+}
+
+
+/*=================================================
+           RESPONSIVE TABLET
+=================================================*/
+
+@media(max-width:900px){
+
+.bottom-nav{
+
+    width:96%;
+
+}
+
+.rekening-card{
+
+    margin-top:18px;
+
+}
+
+}
+
+
+/*=================================================
+            RESPONSIVE MOBILE
+=================================================*/
+
+@media(max-width:768px){
+
+header{
+
+    height:65px;
+
+}
+
+.header span{
+
+    font-size:18px;
+
+}
+
+.page{
+
+    padding:18px;
+
+}
+
+.bottom-nav{
+
+    height:68px;
+
+}
+
+.nav-btn i{
+
+    font-size:20px;
+
+}
+
+.nav-btn span{
+
+    font-size:11px;
+
+}
+
+}
+
+
+/*=================================================
+            RESPONSIVE HP
+=================================================*/
+
+@media(max-width:480px){
+
+.header img{
+
+    width:35px;
+
+}
+
+.header span{
+
+    font-size:16px;
+
+}
+
+.rekening-card{
+
+    border-radius:22px;
+
+}
+
+.bottom-nav{
+
+    bottom:12px;
+
+    height:65px;
+
+    border-radius:22px;
+
+}
+
+.nav-btn span{
+
+    font-size:10px;
+
+}
+
+}
+
+
+/*=================================================
+            RESPONSIVE KECIL
+=================================================*/
+
+@media(max-width:360px){
+
+.header span{
+
+    font-size:15px;
+
+}
+
+.rekening-number h3{
+
+    font-size:16px;
+
+    letter-spacing:1px;
+
+}
+
+.saldo-box h1{
+
+    font-size:28px;
+
+}
+
+.menu-grid{
+
+    gap:10px;
+
+}
+
+.menu-grid button{
+
+    height:75px;
+
+    font-size:13px;
+
+}
+
+.menu-grid button i{
+
+    font-size:24px;
+
+}
+
+.bottom-nav{
+
+    height:62px;
+
+}
+
+}
+
+
+/*=================================================
+            LOADING HIDE
+=================================================*/
+
+.hideSplash{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+
+/*=================================================
+            TOAST ANIMATION
+=================================================*/
+
+#toast.show{
+
+    animation:toastShow .35s;
+
+}
+
+@keyframes toastShow{
+
+    from{
+
+        transform:
+        translateX(-50%)
+        translateY(25px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/*=================================================
+             FADE
+=================================================*/
+
+.fade{
+
+    animation:fade .35s;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/*=================================================
+             SCALE
+=================================================*/
+
+.scale{
+
+    animation:scale .35s;
+
+}
+
+@keyframes scale{
+
+    from{
+
+        transform:scale(.9);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/*=================================================
+            UTILITIES
+=================================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-10{
+
+    margin-top:10px;
+
+}
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+.w100{
+
+    width:100%;
+
+}
