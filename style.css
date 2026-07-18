@@ -567,9 +567,76 @@ header{
 
 .header span{
 
+    position:relative;
+
+    display:inline-block;
+
+    overflow:hidden;
+
     font-size:20px;
+
     font-weight:700;
+
     letter-spacing:1px;
+
+    color:#FFD700;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 5px rgba(255,215,0,.8),
+        0 0 10px rgba(255,215,0,.6),
+        0 0 20px rgba(255,215,0,.4);
+
+}
+
+/* Kilatan berjalan */
+
+.header span::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+
+    left:-80%;
+
+    width:30%;
+
+    height:200%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.95),
+
+        transparent
+
+    );
+
+    transform:rotate(25deg);
+
+    animation:shineHeader 2.5s linear infinite;
+
+}
+
+@keyframes shineHeader{
+
+    0%{
+
+        left:-80%;
+
+    }
+
+    100%{
+
+        left:180%;
+
+    }
 
 }
 
@@ -919,12 +986,6 @@ header{
     color:#FFD54F;
 
 }
-
-/* tombol riwayat */
-
-#lihatMutasi{
-
-    grid-column:1/3;
 
 }
 
