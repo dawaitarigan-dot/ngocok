@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Digital</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ===================== -->
+    <!-- SPLASH SCREEN -->
+    <!-- ===================== -->
+
+    <div id="splash-screen">
+
+        <img src="images/logo.png" class="logo">
+
+        <h1>BANK DIGITAL</h1>
+
+        <p>Memuat Sistem...</p>
+
+        <div class="loader"></div>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- LOGIN -->
+    <!-- ===================== -->
+
+    <section id="login-page">
+
+        <div class="login-card">
+
+            <img src="images/logo.png" class="login-logo">
+
+            <h2>Selamat Datang</h2>
+
+            <p>Masukkan PIN Anda</p>
+
+            <input
+                type="password"
+                id="pinInput"
+                maxlength="6"
+                placeholder="••••••">
+
+            <button id="loginBtn">
+
+                <i class="fa-solid fa-lock"></i>
+
+                LOGIN
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== -->
+    <!-- APLIKASI -->
+    <!-- ===================== -->
+
+    <main id="app">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="header">
+
+                <img src="images/logo.png">
+
+                <span>BANK DIGITAL</span>
+
+            </div>
+
+        </header>
+
+        <!-- ================================= -->
+
+        <!-- HOME -->
+
+        <!-- ================================= -->
+
+        <section id="home" class="page active">
+
+            <div class="rekening-card">
+
+                <div class="rekening-top">
+
+                    <div>
+
+                        <small>Nama Rekening</small>
+
+                        <h2 id="namaRekening">
+
+                            AJI IRWANSYAH
+
+                        </h2>
+
+                    </div>
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <hr>
+
+                <div class="rekening-number">
+
+                    <small>Nomor Rekening</small>
+
+                    <h3 id="nomorRekening">
+
+                        1234567890123456
+
+                    </h3>
+
+                    <button id="copyBtn">
+
+                        <i class="fa-regular fa-copy"></i>
+
+                        Salin Rekening
+
+                    </button>
+
+                </div>
+
+                <hr>
+
+<div class="saldo-box">
+
+    <small>Saldo Utama</small>
+
+    <h1 id="saldo">
+        Rp0
+    </h1>
+
+    <div class="saldo-info">
+
+        <div>
+
+            <small>Masuk Hari Ini</small>
+
+            <h4 id="todayIn">
+                Rp0
+            </h4>
+
+        </div>
+
+        <div>
+
+            <small>Keluar Hari Ini</small>
+
+            <h4 id="todayOut">
+                Rp0
+            </h4>
+
+        </div>
+
+    </div>
+
+</div>
+
+            </div>
+
+            <!-- MENU -->
+
+            <div class="menu-grid">
+
+                <button id="saldoMasuk">
+
+                    <i class="fa-solid fa-circle-plus"></i>
+
+                    Saldo Masuk
+
+                </button>
+
+                <button id="saldoKeluar">
+
+                    <i class="fa-solid fa-circle-minus"></i>
+
+                    Saldo Keluar
+
+                </button>
+
+                <button id="lihatMutasi">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Riwayat Transfer
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ================================= -->
+
+        <!-- MUTASI -->
+
+        <!-- ================================= -->
+
+        <section id="mutasi" class="page">
+
+            <div class="page-title">
+
+                <h2>
+
+                    Riwayat Transaksi
+
+                </h2>
+
+            </div>
+
+            <div id="mutasiList">
+
+                <!-- Otomatis dari Javascript -->
+
+            </div>
+
+        </section>
+
+        <!-- ================================= -->
+
+        <!-- PROFIL -->
+
+        <!-- ================================= -->
+
+        <section id="profil" class="page">
+
+            <div class="profile-card">
+
+                <img src="images/avatar.png">
+
+                <h2 id="profilNama">
+
+                    AJI IRWANSYAH
+
+                </h2>
+
+                <p id="profilRekening">
+
+                    1234567890123456
+
+                </p>
+
+            </div>
+
+            <div class="setting-list">
+
+                <button id="ubahNama">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                    Ganti Nama
+
+                </button>
+
+                <button id="ubahPin">
+
+                    <i class="fa-solid fa-key"></i>
+
+                    Ganti PIN
+
+                </button>
+
+                <button id="logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================================= -->
+
+    <!-- POPUP SALDO -->
+
+    <!-- ================================= -->
+
+<div id="popupSaldo" class="popup">
+
+    <div class="popup-box">
+
+        <h2 id="popupTitle">
+
+            Input Saldo
+
+        </h2>
+
+        <input
+        type="number"
+        id="nominal"
+        placeholder="Masukkan Nominal">
+
+        <textarea
+        id="keterangan"
+        placeholder="Masukkan Keterangan"></textarea>
+
+        <button id="simpanSaldo">
+
+            Simpan
+
+        </button>
+
+        <button id="batalPopup">
+
+            Batal
+
+        </button>
+
+    </div>
+
+</div>
+
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- POPUP GANTI NAMA -->
+
+    <!-- ================================= -->
+
+    <div id="popupNama" class="popup">
+
+        <div class="popup-box">
+
+            <h2>
+
+                Ganti Nama
+
+            </h2>
+
+            <input
+                type="text"
+                id="namaBaru"
+                placeholder="Nama Baru">
+
+            <button id="simpanNama">
+
+                Simpan
+
+            </button>
+
+            <button id="batalNama">
+
+                Batal
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- POPUP GANTI PIN -->
+
+    <!-- ================================= -->
+
+    <div id="popupPin" class="popup">
+
+        <div class="popup-box">
+
+            <h2>
+
+                Ganti PIN
+
+            </h2>
+
+            <input
+                type="password"
+                id="pinLama"
+                placeholder="PIN Lama">
+
+            <input
+                type="password"
+                id="pinBaru"
+                placeholder="PIN Baru">
+
+            <button id="simpanPin">
+
+                Simpan
+
+            </button>
+
+            <button id="batalPin">
+
+                Batal
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- TOAST -->
+
+    <!-- ================================= -->
+
+    <div id="toast">
+
+        Berhasil
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <!-- ================================= -->
+
+    <nav class="bottom-nav">
+
+        <button class="nav-btn active" data-page="home">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Home</span>
+
+        </button>
+
+        <button class="nav-btn" data-page="mutasi">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            <span>Mutasi</span>
+
+        </button>
+
+        <button class="nav-btn" data-page="profil">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>Profil</span>
+
+        </button>
+
+    </nav>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
