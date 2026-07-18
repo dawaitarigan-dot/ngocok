@@ -31,6 +31,9 @@ const copyBtn = document.getElementById("copyBtn");
 const pages = document.querySelectorAll(".page");
 const navButtons = document.querySelectorAll(".nav-btn");
 
+const todayMasuk = document.getElementById("todayMasuk");
+const todayKeluar = document.getElementById("todayKeluar");
+
 
 /* ==========================================================
    DATA DEFAULT
@@ -38,7 +41,7 @@ const navButtons = document.querySelectorAll(".nav-btn");
 
 const DEFAULT_DATA = {
 
-    nama: "AJI IRWANSYAH",
+    nama: "MUTIA PALASARI",
 
     rekening: "1234567890123456",
 
@@ -103,6 +106,43 @@ function rupiah(angka){
 
 }
 
+/* ==========================================================
+   HITUNG MASUK / KELUAR HARI INI
+========================================================== */
+
+function updateToday(){
+
+    const data = getData();
+
+    let masuk = 0;
+    let keluar = 0;
+
+    const hariIni = new Date().toLocaleDateString("id-ID");
+
+    data.mutasi.forEach(item=>{
+
+        if(item.tanggal === hariIni){
+
+            if(item.tipe === "masuk"){
+
+                masuk += Number(item.nominal);
+
+            }else{
+
+                keluar += Number(item.nominal);
+
+            }
+
+        }
+
+    });
+
+    todayMasuk.innerText = rupiah(masuk);
+
+    todayKeluar.innerText = rupiah(keluar);
+
+}
+
 
 /* ==========================================================
    REFRESH DATA KE HTML
@@ -121,6 +161,8 @@ function renderData(){
     profilNama.innerText = data.nama;
 
     profilRekening.innerText = data.rekening;
+
+    updateToday();
 
 }
 
