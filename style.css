@@ -2183,3 +2183,13 @@ header{
     width:100%;
 
 }
+
+@media(max-width:600px){
+
+    .menu-grid{
+
+        margin-bottom:100px;
+
+    }
+
+}
