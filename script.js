@@ -43,7 +43,7 @@ const DEFAULT_DATA = {
 
     nama: "MUTIA PALASARI",
 
-    rekening: "1234567890123456",
+    rekening: "901663014851",
 
     saldo: 0,
 
