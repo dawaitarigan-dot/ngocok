@@ -2574,12 +2574,32 @@ transform:scale(2);
 /* ========================= */
 
 .saldo-info{
-
     display:flex;
-
     gap:15px;
+    width:100%;
+}
 
-    margin-top:20px;
+
+.saldo-item{
+
+    flex:1;
+
+    min-width:0; /* INI PENTING */
+
+    overflow:hidden;
+
+}
+
+
+.saldo-item h4{
+
+    font-size:16px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
 
 }
 
