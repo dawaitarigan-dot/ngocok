@@ -137,9 +137,9 @@ function updateToday(){
 
     });
 
-    todayMasuk.innerText = rupiah(masuk);
+animateSaldo(todayMasuk, masuk);
 
-    todayKeluar.innerText = rupiah(keluar);
+animateSaldo(todayKeluar, keluar);
 
 }
 
@@ -156,7 +156,7 @@ function renderData(){
 
     nomorRekening.innerText = data.rekening;
 
-    saldo.innerText = rupiah(data.saldo);
+    animateSaldo(saldo, data.saldo);
 
     profilNama.innerText = data.nama;
 
@@ -655,6 +655,8 @@ simpanSaldo.onclick=()=>{
     showToast(
     "Transaksi berhasil"
     );
+	
+	confettiSaldo();
 
 
 };
@@ -1292,3 +1294,142 @@ console.log(
 =================================
 `
 );
+
+/* ========================= */
+/* RIPPLE EFFECT */
+/* ========================= */
+
+document.querySelectorAll(".ripple-btn").forEach(button=>{
+
+button.addEventListener("click",function(e){
+
+const ripple=document.createElement("span");
+
+const size=Math.max(this.clientWidth,this.clientHeight);
+
+const rect=this.getBoundingClientRect();
+
+ripple.style.width=size+"px";
+
+ripple.style.height=size+"px";
+
+ripple.style.left=e.clientX-rect.left-size/2+"px";
+
+ripple.style.top=e.clientY-rect.top-size/2+"px";
+
+ripple.className="ripple";
+
+this.appendChild(ripple);
+
+setTimeout(()=>{
+
+ripple.remove();
+
+},600);
+
+});
+
+});
+
+// =======================================
+// ANIMASI ANGKA SALDO
+// =======================================
+
+function animateSaldo(target, nilaiBaru) {
+
+    let awal = parseInt(target.dataset.value || 0);
+
+    let akhir = parseInt(nilaiBaru);
+
+    let durasi = 800; // 0.8 detik
+
+    let langkah = 20;
+
+    let kenaikan = (akhir - awal) / (durasi / langkah);
+
+    let sekarang = awal;
+
+    clearInterval(target.counter);
+
+    target.counter = setInterval(() => {
+
+        sekarang += kenaikan;
+
+        if ((kenaikan >= 0 && sekarang >= akhir) ||
+            (kenaikan < 0 && sekarang <= akhir)) {
+
+            sekarang = akhir;
+
+            clearInterval(target.counter);
+
+        }
+
+        target.innerHTML = "Rp" + Math.round(sekarang).toLocaleString("id-ID");
+
+    }, langkah);
+
+    target.dataset.value = akhir;
+
+}
+
+function confettiSaldo(){
+
+
+const container = document.getElementById(
+"confetti-container"
+);
+
+
+const icon = [
+"🎉",
+"✨",
+"🎊",
+"💰",
+"⭐"
+];
+
+
+for(let i=0;i<50;i++){
+
+
+let item=document.createElement("div");
+
+
+item.className="confetti";
+
+
+item.innerHTML=
+icon[
+Math.floor(
+Math.random()*icon.length
+)
+];
+
+
+item.style.left =
+Math.random()*100+"%";
+
+
+item.style.fontSize =
+(15+Math.random()*20)+"px";
+
+
+item.style.animationDuration =
+(1+Math.random()*2)+"s";
+
+
+container.appendChild(item);
+
+
+
+setTimeout(()=>{
+
+item.remove();
+
+},3000);
+
+
+}
+
+
+}
