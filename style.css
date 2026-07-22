@@ -2574,24 +2574,36 @@ transform:scale(2);
 /* ========================= */
 
 .saldo-info{
+
     display:flex;
-    gap:15px;
+
+    gap:12px;
+
     width:100%;
+
 }
 
 
-.saldo-item{
+.saldo-info > div{
 
     flex:1;
 
-    min-width:0; /* INI PENTING */
+    min-width:0;
 
     overflow:hidden;
+
+    background:rgba(255,255,255,.1);
+
+    padding:10px;
+
+    border-radius:15px;
 
 }
 
 
-.saldo-item h4{
+/* Nominal masuk keluar */
+
+.saldo-info h4{
 
     font-size:16px;
 
@@ -2600,22 +2612,6 @@ transform:scale(2);
     overflow:hidden;
 
     text-overflow:ellipsis;
-
-}
-
-.saldo-info div{
-
-    flex:1;
-
-    background:rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    padding:15px;
-
-    backdrop-filter:blur(10px);
-
-    transition:.3s;
 
 }
 
