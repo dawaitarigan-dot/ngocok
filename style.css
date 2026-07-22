@@ -678,30 +678,35 @@ header{
    CARD REKENING
 ================================= */
 
+/* =============================== */
+/* CARD GLASSMORPHISM PREMIUM */
+/* =============================== */
+
 .rekening-card{
-
-    margin-top:25px;
-
-    background:
-
-    linear-gradient(
-    135deg,
-    rgba(13,110,253,.95),
-    rgba(5,70,180,.95)
-    );
-
-    border-radius:25px;
-
-    padding:22px;
-
-    color:#fff;
 
     position:relative;
 
     overflow:hidden;
 
+    padding:25px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
     box-shadow:
-    0 20px 45px rgba(0,0,0,.35);
+
+        0 15px 40px rgba(0,0,0,.35),
+
+        inset 0 1px 1px rgba(255,255,255,.15);
+
+    transition:.4s;
 
 }
 
@@ -714,17 +719,78 @@ header{
     position:absolute;
 
     width:220px;
-    height:220px;
 
-    background:
+    height:500px;
 
-    radial-gradient(
-    rgba(255,255,255,.25),
-    transparent
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.25),
+
+        transparent
+
     );
 
-    right:-70px;
-    top:-70px;
+    top:-80px;
+
+    left:-250px;
+
+    transform:rotate(20deg);
+
+    animation:glassMove 6s linear infinite;
+
+}
+
+@keyframes glassMove{
+
+0%{
+
+left:-250px;
+
+}
+
+100%{
+
+left:120%;
+
+}
+
+}
+
+.rekening-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-120px;
+
+    left:-80px;
+
+    width:220px;
+
+    height:220px;
+
+    background:#00bfff55;
+
+    border-radius:50%;
+
+    filter:blur(40px);
+
+}
+
+.rekening-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.45),
+
+        0 0 30px rgba(0,170,255,.35);
 
 }
 
@@ -734,11 +800,13 @@ header{
 
 .rekening-top{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:center;
+align-items:center;
+
+margin-bottom:15px;
 
 }
 
@@ -762,18 +830,45 @@ header{
 
 .rekening-top i{
 
-    font-size:28px;
+width:65px;
 
-    background:rgba(255,255,255,.15);
+height:65px;
 
-    width:55px;
-    height:55px;
+border-radius:50%;
 
-    border-radius:50%;
+display:flex;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+color:#fff;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#67b7ff,
+
+#2b67ff
+
+);
+
+box-shadow:
+
+0 0 20px rgba(0,150,255,.4);
+
+transition:.4s;
+
+}
+
+.rekening-top i:hover{
+
+transform:rotate(15deg) scale(1.1);
 
 }
 
@@ -783,11 +878,25 @@ header{
 
 .rekening-card hr{
 
-    margin:18px 0;
+border:none;
 
-    border:none;
+height:1px;
 
-    border-top:1px solid rgba(255,255,255,.15);
+margin:22px 0;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
 
 }
 
@@ -797,7 +906,17 @@ header{
 
 .rekening-number{
 
-    text-align:center;
+font-size:28px;
+
+letter-spacing:3px;
+
+font-weight:700;
+
+color:#fff;
+
+text-shadow:
+
+0 0 10px rgba(255,255,255,.4);
 
 }
 
@@ -823,27 +942,59 @@ header{
 
 #copyBtn{
 
-    margin-top:18px;
-
-    width:100%;
-
-    height:50px;
+    margin-top:15px;
 
     border:none;
 
     border-radius:15px;
 
-    background:#fff;
+    padding:14px;
 
-    color:#0D6EFD;
+    background:white;
 
-    font-size:15px;
+    color:#1565ff;
 
-    font-weight:600;
+    font-weight:700;
 
     cursor:pointer;
 
-    transition:.25s;
+    transition:.3s;
+
+}
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-5px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.rekening-card{
+
+animation:floating 4s ease-in-out infinite;
+
+}
+
+#copyBtn:hover{
+
+    transform:scale(1.03);
+
+    background:#eef5ff;
 
 }
 
@@ -943,11 +1094,25 @@ header{
 
 }
 
-.menu-grid button:hover{
+.menu-grid button:hover i{
 
-    transform:translateY(-4px);
+animation:spinIcon .5s;
 
-    background:rgba(255,255,255,.12);
+}
+
+@keyframes spinIcon{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
 
 }
 
@@ -971,21 +1136,25 @@ header{
 
 #saldoMasuk i{
 
-    color:#00E676;
+color:#2aff75;
 
 }
 
 #saldoKeluar i{
 
-    color:#FF5252;
+color:#ff5c5c;
 
 }
 
-#lihatMutasi i{
+.nav-btn[data-page="mutasi"] i{
 
-    color:#FFD54F;
+color:#58a6ff;
 
 }
+
+.nav-btn[data-page="profil"] i{
+
+color:#ffcc00;
 
 }
 
@@ -2194,6 +2363,318 @@ header{
 
 }
 
+/* ================================= */
+/* BACKGROUND ANIMASI */
+/* ================================= */
+
+body{
+
+    background:linear-gradient(135deg,#08192f,#103f8d,#1459ff);
+
+    overflow-x:hidden;
+
+}
+
+.animated-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+.circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(60px);
+
+    opacity:.35;
+
+    animation:float 18s infinite ease-in-out;
+
+}
+
+.c1{
+
+    width:280px;
+
+    height:280px;
+
+    background:#00d4ff;
+
+    top:-80px;
+
+    left:-80px;
+
+}
+
+.c2{
+
+    width:350px;
+
+    height:350px;
+
+    background:#7b2cff;
+
+    bottom:-100px;
+
+    right:-100px;
+
+    animation-delay:4s;
+
+}
+
+.c3{
+
+    width:220px;
+
+    height:220px;
+
+    background:#00ff88;
+
+    top:40%;
+
+    left:60%;
+
+    animation-delay:8s;
+
+}
+
+.c4{
+
+    width:260px;
+
+    height:260px;
+
+    background:#ff3ea5;
+
+    top:65%;
+
+    left:15%;
+
+    animation-delay:12s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+25%{
+
+transform:translate(60px,-40px) scale(1.15);
+
+}
+
+50%{
+
+transform:translate(-30px,50px) scale(.95);
+
+}
+
+75%{
+
+transform:translate(50px,20px) scale(1.08);
+
+}
+
+100%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+}
+
+.stars span{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    animation:blink 2s infinite;
+
+}
+
+.stars span:nth-child(1){top:15%;left:20%;}
+.stars span:nth-child(2){top:35%;left:75%;}
+.stars span:nth-child(3){top:60%;left:30%;}
+.stars span:nth-child(4){top:80%;left:65%;}
+.stars span:nth-child(5){top:25%;left:50%;}
+.stars span:nth-child(6){top:70%;left:90%;}
+
+@keyframes blink{
+
+0%,100%{
+
+opacity:.2;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(2);
+
+}
+
+}
+
+/* ========================= */
+/* SALDO PREMIUM */
+/* ========================= */
+
+#saldo{
+
+    font-size:25px;
+
+    font-weight:600;
+
+    color:#ffffff;
+	
+	animation:saldoGlow 2s infinite;
+
+    text-shadow:
+        0 0 15px rgba(155,155,155,.1);
+
+    transition:.1s;
+
+}
+
+/* ========================= */
+/* SALDO INFO */
+/* ========================= */
+
+.saldo-info{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.saldo-info div{
+
+    flex:1;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:15px;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+
+}
+
+.saldo-info div:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.saldo-info small{
+
+    color:#d7e9ff;
+
+}
+
+.saldo-info h4{
+
+    color:#fff;
+
+    font-size:22px;
+
+    margin-top:8px;
+
+}
+
+@keyframes saldoGlow{
+
+0%{
+
+text-shadow:
+0 0 5px #fff,
+0 0 10px #00c8ff,
+0 0 20px #00c8ff;
+
+}
+
+50%{
+
+text-shadow:
+0 0 10px #fff,
+0 0 25px #00e1ff,
+0 0 50px #00e1ff,
+0 0 80px #00e1ff;
+
+}
+
+100%{
+
+text-shadow:
+0 0 5px #fff,
+0 0 10px #00c8ff,
+0 0 20px #00c8ff;
+
+}
+
+}
+
+@keyframes saldoUpdate{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.saldo-update{
+
+animation:saldoUpdate .5s ease;
+
+}
+
 .rekening-row{
 
     display:flex;
@@ -2202,28 +2683,410 @@ header{
 
     align-items:center;
 
-    gap:15px;
+    gap:12px;
 
     margin-top:8px;
 
 }
 
-.bank-name{
+.bank-badge{
 
-    background:#00b894;
+    background:linear-gradient(135deg,#00d084,#00b894);
 
     color:#fff;
 
-    padding:5px 12px;
+    padding:6px 14px;
 
-    border-radius:20px;
+    border-radius:30px;
 
     font-size:12px;
 
     font-weight:700;
 
-    letter-spacing:.5px;
+    letter-spacing:1px;
 
-    white-space:nowrap;
+    box-shadow:0 5px 15px rgba(0,208,132,.35);
+
+}
+
+/* ========================= */
+/* ICON HIDUP */
+/* ========================= */
+
+.menu-grid button{
+
+    transition:.35s;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.menu-grid button i{
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+    transition:.35s;
+
+}
+
+/* Hover */
+
+.menu-grid button:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+.menu-grid button:hover i{
+
+    transform:scale(1.25) rotate(-10deg);
+
+}
+
+/* Klik */
+
+.menu-grid button:active{
+
+    transform:scale(.95);
+
+}
+
+.menu-grid button:active i{
+
+    transform:scale(.85);
+
+}
+
+@keyframes pulseIcon{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.18);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.menu-grid button::after{
+
+content:"";
+
+position:absolute;
+
+width:20px;
+
+height:20px;
+
+background:#fff;
+
+border-radius:50%;
+
+opacity:0;
+
+transform:scale(0);
+
+transition:.5s;
+
+}
+
+.menu-grid button:active::after{
+
+opacity:.3;
+
+transform:scale(12);
+
+}
+
+/* ========================= */
+/* HEADER NOTE TABUNGAN */
+/* ========================= */
+
+
+header{
+
+    position:relative;
+
+    padding:15px 0;
+
+    overflow:hidden;
+
+}
+
+
+.header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+
+
+/* LOGO */
+
+.header img{
+
+    width:32px;
+
+    height:32px;
+
+    border-radius:8px;
+
+    animation:
+
+    logoFloat 3s infinite ease-in-out;
+
+}
+
+
+
+/* ANIMASI LOGO */
+
+@keyframes logoFloat{
+
+
+0%,100%{
+
+    transform:translateY(0);
+
+}
+
+
+50%{
+
+    transform:translateY(-5px);
+
+}
+
+}
+
+
+
+/* TEXT */
+
+.note-title{
+
+
+font-size:22px;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+
+/* WARNA GRADIENT */
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#00ffff,
+
+#ffffff,
+
+#ffe600,
+
+#ff00ff,
+
+#00ffff
+
+);
+
+
+background-size:300%;
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+
+/* ANIMASI WARNA */
+
+animation:
+
+gradientMove 4s linear infinite;
+
+
+position:relative;
+
+
+}
+
+
+
+/* GERAK WARNA */
+
+@keyframes gradientMove{
+
+
+0%{
+
+background-position:0%;
+
+}
+
+
+100%{
+
+background-position:300%;
+
+}
+
+
+}
+
+
+
+/* KILATAN */
+
+.note-title::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+top:0;
+
+left:-100%;
+
+
+width:50%;
+
+height:100%;
+
+
+background:
+
+
+linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,255,255,.8),
+
+transparent
+
+);
+
+
+animation:
+
+shine 3s infinite;
+
+
+
+}
+
+
+
+/* GERAK KILAT */
+
+@keyframes shine{
+
+
+0%{
+
+left:-100%;
+
+}
+
+
+40%{
+
+left:150%;
+
+}
+
+
+100%{
+
+left:150%;
+
+}
+
+
+}
+
+.header::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-5px;
+
+width:80%;
+
+height:2px;
+
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+#00ffff,
+
+#ff00ff,
+
+transparent
+
+);
+
+
+animation:lineMove 3s infinite;
+
+}
+
+
+@keyframes lineMove{
+
+
+0%{
+
+transform:translateX(-100%);
+
+}
+
+
+100%{
+
+transform:translateX(100%);
+
+}
 
 }
